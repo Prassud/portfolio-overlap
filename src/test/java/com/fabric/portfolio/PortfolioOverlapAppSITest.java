@@ -10,7 +10,6 @@ import java.io.PrintStream;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.verify;
 
 public class PortfolioOverlapAppSITest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();

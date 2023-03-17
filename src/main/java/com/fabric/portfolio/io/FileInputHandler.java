@@ -1,14 +1,11 @@
 package com.fabric.portfolio.io;
 
-import com.fabric.portfolio.orchestrator.CommandOrchestrator;
 import com.fabric.portfolio.model.comand.CommandResult;
+import com.fabric.portfolio.orchestrator.CommandOrchestrator;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 

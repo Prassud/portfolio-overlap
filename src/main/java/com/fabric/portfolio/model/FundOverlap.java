@@ -1,8 +1,6 @@
 package com.fabric.portfolio.model;
 
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.Set;
 
 public class FundOverlap {
 
