@@ -42,7 +42,39 @@ public class ConsoleOutputHandlerTest {
                 "second\n" +
                 "third\n" +
                 "fourth\n" +
-                "fifth\n", outContent.toString());
+                "fifth", outContent.toString());
+
+    }
+
+    @Test
+    public void shouldSkipIfResultIsEmpty() {
+        CommandResult firstResult = new CommandResult(List.of("first"), Status.SUCCESS);
+        CommandResult secondResult = new CommandResult(List.of("second"), Status.SUCCESS);
+        CommandResult thirdResult = new CommandResult(List.of(), Status.SUCCESS);
+        CommandResult fourthResult = new CommandResult(List.of("fourth"), Status.SUCCESS);
+        CommandResult fifthResult = new CommandResult(List.of("fifth"), Status.SUCCESS);
+        CommandResult sixthResult = new CommandResult(List.of(), Status.SUCCESS);
+
+        consoleOutputHandler.handle(List.of(firstResult, secondResult, thirdResult, fourthResult, fifthResult, sixthResult));
+
+        assertEquals("first\n" +
+                "second\n" +
+                "fourth\n" +
+                "fifth", outContent.toString());
+
+    }
+
+    @Test
+    public void shouldNotPrintIfResultsAreEmpty() {
+        CommandResult firstResult = new CommandResult(List.of(), Status.SUCCESS);
+        CommandResult secondResult = new CommandResult(List.of(), Status.SUCCESS);
+        CommandResult thirdResult = new CommandResult(List.of(), Status.SUCCESS);
+        CommandResult fourthResult = new CommandResult(List.of(), Status.SUCCESS);
+        CommandResult fifthResult = new CommandResult(List.of(), Status.SUCCESS);
+
+        consoleOutputHandler.handle(List.of(firstResult, secondResult, thirdResult, fourthResult, fifthResult));
+
+        assertEquals("", outContent.toString());
 
     }
 }

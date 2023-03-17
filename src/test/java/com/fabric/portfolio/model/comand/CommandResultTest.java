@@ -16,6 +16,8 @@ public class CommandResultTest {
         commandResult.addResult("new result");
         commandResult.addResult("second new  result");
 
+        assertEquals("new result\n" +
+                "second new  result", commandResult.format());
         assertEquals(2, results.size());
         assertEquals("new result", results.get(0));
         assertEquals("second new  result", results.get(1));
