@@ -1,25 +1,16 @@
 package com.fabric.portfolio;
 
-import com.fabric.portfolio.io.ConsoleOutputHandler;
-import com.fabric.portfolio.io.FileInputHandler;
-import com.fabric.portfolio.model.comand.CommandResult;
-import com.fabric.portfolio.model.comand.Status;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
 
 public class PortfolioOverlapAppSITest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -37,7 +28,7 @@ public class PortfolioOverlapAppSITest {
 
     @Test
     public void shouldStartExecution_1() throws IOException {
-        String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("first_input.txt")).getFile();
+        String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("sample_input/first_input.txt")).getFile();
         String[] args = {filePath};
 
         PortfolioOverlapApp.main(args);
@@ -55,7 +46,7 @@ public class PortfolioOverlapAppSITest {
 
     @Test
     public void shouldStartExecution_2() throws IOException {
-        String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("second_input.txt")).getFile();
+        String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("sample_input/second_input.txt")).getFile();
         String[] args = {filePath};
 
         PortfolioOverlapApp.main(args);
