@@ -40,7 +40,7 @@ public class PortfolioOverlapAppSITest {
                 "MIRAE_ASSET_LARGE_CAP UTI_NIFTY_INDEX 95.00%\n" +
                 "MIRAE_ASSET_EMERGING_BLUECHIP AXIS_BLUECHIP 38.71%\n" +
                 "MIRAE_ASSET_EMERGING_BLUECHIP ICICI_PRU_BLUECHIP 38.10%\n" +
-                "MIRAE_ASSET_EMERGING_BLUECHIP UTI_NIFTY_INDEX 65.52%", outContent.toString());
+                "MIRAE_ASSET_EMERGING_BLUECHIP UTI_NIFTY_INDEX 65.52%\n", outContent.toString());
     }
 
     @Test
@@ -56,6 +56,6 @@ public class PortfolioOverlapAppSITest {
                 "FUND_NOT_FOUND\n" +
                 "ICICI_PRU_NIFTY_NEXT_50_INDEX UTI_NIFTY_INDEX 20.37%\n" +
                 "ICICI_PRU_NIFTY_NEXT_50_INDEX AXIS_MIDCAP 14.68%\n" +
-                "ICICI_PRU_NIFTY_NEXT_50_INDEX PARAG_PARIKH_FLEXI_CAP 7.32%", outContent.toString());
+                "ICICI_PRU_NIFTY_NEXT_50_INDEX PARAG_PARIKH_FLEXI_CAP 7.32%\n", outContent.toString());
     }
 }

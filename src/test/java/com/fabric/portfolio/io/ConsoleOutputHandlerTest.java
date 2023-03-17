@@ -16,7 +16,7 @@ public class ConsoleOutputHandlerTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
-    private ConsoleOutputHandler consoleOutputHandler = new ConsoleOutputHandler();
+    private final ConsoleOutputHandler consoleOutputHandler = new ConsoleOutputHandler();
 
     @BeforeEach
     void setUp() {
@@ -42,7 +42,7 @@ public class ConsoleOutputHandlerTest {
                 "second\n" +
                 "third\n" +
                 "fourth\n" +
-                "fifth", outContent.toString());
+                "fifth\n", outContent.toString());
 
     }
 
@@ -60,7 +60,7 @@ public class ConsoleOutputHandlerTest {
         assertEquals("first\n" +
                 "second\n" +
                 "fourth\n" +
-                "fifth", outContent.toString());
+                "fifth\n", outContent.toString());
 
     }
 
