@@ -8,12 +8,35 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FundOverlapTest {
 
+    private final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     @Test
-    void shouldCreateNewFundOverlap() {
+    public void shouldCreateNewFundOverlap() {
         FundOverlap fundOverlap = new FundOverlap("first", "second", 25.2);
-        DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
+        assertTrue(fundOverlap.isValid(decimalFormat));
         assertEquals("first second 25.20%", fundOverlap.getFormattedString(decimalFormat));
+    }
+
+    @Test
+    public void shouldReturnFalseIfOverlapPercentageIsLessThanEqualToZero() {
+        FundOverlap fundOverlap = new FundOverlap("first", "second", 0.000);
+
+        assertFalse(fundOverlap.isValid(decimalFormat));
+    }
+
+    @Test
+    public void shouldReturnFalseIfOverlapPercentageIsLessThanEqualToZeroWithdecimal() {
+        FundOverlap fundOverlap = new FundOverlap("first", "second", 0.00111);
+
+        assertFalse(fundOverlap.isValid(decimalFormat));
+    }
+
+    @Test
+    public void shouldReturnTrueIfOverlapPercentageIsLessThanEqualToZeroWithDecimal_BasedOnDecimalFormat() {
+        FundOverlap fundOverlap = new FundOverlap("first", "second", 0.00111);
+        DecimalFormat decimalFormat = new DecimalFormat("0.00000");
+
+        assertTrue(fundOverlap.isValid(decimalFormat));
     }
 }

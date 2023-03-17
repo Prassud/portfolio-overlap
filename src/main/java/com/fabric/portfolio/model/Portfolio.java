@@ -21,7 +21,8 @@ public class Portfolio {
         final List<FundOverlap> fundOverlaps = new ArrayList<>();
         final PortfolioOverlap portfolioOverlap = new PortfolioOverlap(fundOverlaps);
         for (MutualFund fund : funds) {
-            portfolioOverlap.add(overlapCalculator.calculateOverlap(secondMutualFund, fund));
+            FundOverlap fundOverlap = overlapCalculator.calculateOverlap(secondMutualFund, fund);
+            portfolioOverlap.add(fundOverlap);
         }
         return portfolioOverlap;
     }

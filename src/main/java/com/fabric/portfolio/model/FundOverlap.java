@@ -2,8 +2,9 @@ package com.fabric.portfolio.model;
 
 import java.text.DecimalFormat;
 
-public class FundOverlap {
+import static java.lang.Double.parseDouble;
 
+public class FundOverlap {
     private final String firstFundName;
 
     private final String secondFundName;
@@ -17,8 +18,14 @@ public class FundOverlap {
         this.overlapPercentage = overlapPercentage;
     }
 
-    public String getFormattedString(DecimalFormat decimalFormat){
+    public String getFormattedString(DecimalFormat decimalFormat) {
         String overLoadPercentageString = decimalFormat.format(overlapPercentage);
         return String.format("%s %s %s", firstFundName, secondFundName, overLoadPercentageString + "%");
+
+    }
+
+    public boolean isValid(DecimalFormat decimalFormat) {
+        String overLoadPercentageString = decimalFormat.format(overlapPercentage);
+        return parseDouble(overLoadPercentageString) > 0;
     }
 }

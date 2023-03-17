@@ -18,8 +18,10 @@ public class PortfolioOverlap {
     public List<String> getOverlapResult(DecimalFormat decimalFormat) {
         List<String> overlapResult = new ArrayList<>();
         for (FundOverlap fundOverlap : fundOverlaps) {
-            String formattedString = fundOverlap.getFormattedString(decimalFormat);
-            overlapResult.add(formattedString);
+            if (fundOverlap.isValid(decimalFormat)) {
+                String formattedString = fundOverlap.getFormattedString(decimalFormat);
+                overlapResult.add(formattedString);
+            }
         }
         return overlapResult;
     }
