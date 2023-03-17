@@ -3,7 +3,7 @@ package com.fabric.portfolio;
 import com.fabric.portfolio.io.InputHandler;
 import com.fabric.portfolio.io.OutputHandler;
 import com.fabric.portfolio.loader.ApplicationLoader;
-import com.fabric.portfolio.loader.BeanFactory;
+import com.fabric.portfolio.factory.BeanFactory;
 import com.fabric.portfolio.model.comand.CommandResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

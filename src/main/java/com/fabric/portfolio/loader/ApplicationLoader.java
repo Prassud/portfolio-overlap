@@ -1,6 +1,7 @@
 package com.fabric.portfolio.loader;
 
 import com.fabric.portfolio.PortfolioOverlapApp;
+import com.fabric.portfolio.factory.BeanFactory;
 import com.fabric.portfolio.orchestrator.CommandOrchestrator;
 import com.fabric.portfolio.factory.CommandFactory;
 import com.fabric.portfolio.model.MutualFund;

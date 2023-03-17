@@ -32,7 +32,7 @@ public class AddStockCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsSuccessful(){
+    public void shouldReturnCommandResultAsSuccessful_WhenAddStocksToFund(){
         List<String> inputs = List.of("fundName", "stockName");
         CommandInput input = new CommandInput(inputs);
 
@@ -46,7 +46,7 @@ public class AddStockCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsFailed(){
+    public void shouldReturnCommandResultAsFailed_WhenAddStocksToFund(){
         List<String> inputs = List.of("fundName", "stockName");
         CommandInput input = new CommandInput(inputs);
         doThrow(new FundNotFoundException("Fund not found")).when(fundService).addStockToFund("fundName", "stockName");

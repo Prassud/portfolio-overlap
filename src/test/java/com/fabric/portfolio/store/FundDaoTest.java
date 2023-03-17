@@ -59,7 +59,7 @@ public class FundDaoTest {
     }
 
     @Test
-    public void shouldReturnTrueWhenFundExistsInFunds() {
+    public void shouldReturnTrueWhenFundExistsInFundMap() {
         MutualFund mockFund = Mockito.mock(MutualFund.class);
         when(fundMap.get("newFund")).thenReturn(mockFund);
 
@@ -69,7 +69,7 @@ public class FundDaoTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenFundDoesNotExistsInFunds() {
+    public void shouldReturnFalseWhenFundDoesNotExistsInFundMap() {
         assertFalse(assetDao.isExists("newFund"));
 
         verify(fundMap).get("newFund");

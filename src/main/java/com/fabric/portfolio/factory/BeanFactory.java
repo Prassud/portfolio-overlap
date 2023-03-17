@@ -1,11 +1,10 @@
-package com.fabric.portfolio.loader;
+package com.fabric.portfolio.factory;
 
 import com.fabric.portfolio.PortfolioOverlapApp;
 import com.fabric.portfolio.command.AddStockCommand;
 import com.fabric.portfolio.command.CurrentPortfolioCommand;
 import com.fabric.portfolio.command.ICommand;
 import com.fabric.portfolio.command.PortFolioOverlapCommand;
-import com.fabric.portfolio.factory.CommandFactory;
 import com.fabric.portfolio.io.ConsoleOutputHandler;
 import com.fabric.portfolio.io.FileInputHandler;
 import com.fabric.portfolio.model.Investment;

@@ -32,7 +32,7 @@ public class CurrentPortfolioCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsSuccessful(){
+    public void shouldReturnCommandResultAsSuccessful_OnCurrentPortfolioCommand(){
         List<String> inputs = List.of("firstFund", "secondFund");
         CommandInput input = new CommandInput(inputs);
 
@@ -45,7 +45,7 @@ public class CurrentPortfolioCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsFailed(){
+    public void shouldReturnCommandResultAsFailed_OnCurrentPortfolioCommand(){
         List<String> inputs = List.of("firstFund", "secondFund");
         CommandInput input = new CommandInput(inputs);
         doThrow(new FundNotFoundException("Fund not found")).when(investorService).addFunds(inputs);

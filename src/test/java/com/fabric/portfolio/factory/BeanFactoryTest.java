@@ -1,9 +1,8 @@
-package com.fabric.portfolio.loader;
+package com.fabric.portfolio.factory;
 
 import com.fabric.portfolio.command.AddStockCommand;
 import com.fabric.portfolio.command.CurrentPortfolioCommand;
 import com.fabric.portfolio.command.PortFolioOverlapCommand;
-import com.fabric.portfolio.factory.CommandFactory;
 import com.fabric.portfolio.model.MutualFund;
 import com.fabric.portfolio.orchestrator.CommandOrchestrator;
 import com.fabric.portfolio.service.FundService;
@@ -23,7 +22,9 @@ import java.util.Map;
 import static com.fabric.portfolio.utils.Constants.CommandNames.ADD_STOCK;
 import static com.fabric.portfolio.utils.Constants.CommandNames.CALCULATE_OVERLAP;
 import static com.fabric.portfolio.utils.Constants.CommandNames.CURRENT_PORTFOLIO;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class BeanFactoryTest {

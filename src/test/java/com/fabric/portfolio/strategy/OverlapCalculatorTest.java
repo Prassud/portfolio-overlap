@@ -38,7 +38,7 @@ public class OverlapCalculatorTest {
     }
 
     @Test
-    public void shouldCalculateOverlap_100() {
+    public void shouldCalculateOverlap_WhenOverlapPercentageIs100() {
         MutualFund firstFund = Mockito.mock(MutualFund.class);
         MutualFund secondFund = Mockito.mock(MutualFund.class);
         when(firstFund.getName()).thenReturn("firstFund");

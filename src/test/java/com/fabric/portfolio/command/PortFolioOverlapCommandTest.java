@@ -39,7 +39,7 @@ public class PortFolioOverlapCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsSuccessful(){
+    public void shouldReturnCommandResultAsSuccessful_onPortfolioOverLapCommand(){
         List<String> inputs = List.of("firstFund");
         CommandInput input = new CommandInput(inputs);
         PortfolioOverlap portfolioOverlap = Mockito.mock(PortfolioOverlap.class);
@@ -76,7 +76,7 @@ public class PortFolioOverlapCommandTest {
     }
 
     @Test
-    public void shouldReturnCommandResultAsFailed(){
+    public void shouldReturnCommandResultAsFailed_onPortfolioOverLapCommand(){
         List<String> inputs = List.of("firstFund", "secondFund");
         CommandInput input = new CommandInput(inputs);
         when(investorService.calculateOverLap("firstFund")).thenThrow(new FundNotFoundException("Fund not found"));
