@@ -26,7 +26,7 @@ public class PortfolioOverlapAppSITest {
     }
 
     @Test
-    public void shouldStartExecution_1() throws IOException {
+    public void shouldStartExecution_ReturnExpectedResult_FirstInput() throws IOException {
         String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("sample_input/first_input.txt")).getFile();
         String[] args = {filePath};
 
@@ -44,7 +44,7 @@ public class PortfolioOverlapAppSITest {
     }
 
     @Test
-    public void shouldStartExecution_2() throws IOException {
+    public void shouldStartExecution_ReturnExpectedResult_SecondInput() throws IOException {
         String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("sample_input/second_input.txt")).getFile();
         String[] args = {filePath};
 
@@ -57,5 +57,15 @@ public class PortfolioOverlapAppSITest {
                 "ICICI_PRU_NIFTY_NEXT_50_INDEX UTI_NIFTY_INDEX 20.37%\n" +
                 "ICICI_PRU_NIFTY_NEXT_50_INDEX AXIS_MIDCAP 14.68%\n" +
                 "ICICI_PRU_NIFTY_NEXT_50_INDEX PARAG_PARIKH_FLEXI_CAP 7.32%\n", outContent.toString());
+    }
+
+    @Test
+    public void shouldStartExecution_ReturnExpectedResult_thirdInput() throws IOException {
+        String filePath = Objects.requireNonNull(getClass().getClassLoader().getResource("sample_input/third_input.txt")).getFile();
+        String[] args = {filePath};
+
+        PortfolioOverlapApp.main(args);
+
+        assertEquals("", outContent.toString());
     }
 }
