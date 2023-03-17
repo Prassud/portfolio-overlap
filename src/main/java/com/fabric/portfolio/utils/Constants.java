@@ -6,7 +6,6 @@ public class Constants {
         public static final String CALCULATE_OVERLAP = "CALCULATE_OVERLAP";
         public static final String ADD_STOCK = "ADD_STOCK";
     }
-
     public static class CommandResults {
         public static final String FUND_NOT_FOUND = "FUND_NOT_FOUND";
     }

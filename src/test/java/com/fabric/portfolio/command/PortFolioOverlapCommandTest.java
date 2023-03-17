@@ -58,6 +58,24 @@ public class PortFolioOverlapCommandTest {
     }
 
     @Test
+    public void shouldReturnCommandResultWithEmptyResults_WhenPortfolioOverlapResultsReturnEmptyLists(){
+        List<String> inputs = List.of("firstFund");
+        CommandInput input = new CommandInput(inputs);
+        PortfolioOverlap portfolioOverlap = Mockito.mock(PortfolioOverlap.class);
+        when(portfolioOverlap.getOverlapResult(decimalFormat)).thenReturn(List.of());
+        when(investorService.calculateOverLap("firstFund")).thenReturn(portfolioOverlap);
+
+        CommandResult commandResult = portFolioOverlapCommand.execute(input);
+
+        assertNotNull(commandResult);
+        assertTrue(commandResult.isSuccessFul());
+        assertTrue(commandResult.isEmpty());
+        assertEquals("", commandResult.format());
+        verify(investorService).calculateOverLap("firstFund");
+        verify(portfolioOverlap).getOverlapResult(decimalFormat);
+    }
+
+    @Test
     public void shouldReturnCommandResultAsFailed(){
         List<String> inputs = List.of("firstFund", "secondFund");
         CommandInput input = new CommandInput(inputs);
